@@ -61,19 +61,13 @@ class PagesController extends Controller
 
     public function customize($id, $dh, $je)
     {
-        // dump($id);
-        // dump($dh);
-        // dump($je);
         $yjjes = DB::table('table_sfjl')->where([['sfdh', '=', $dh], ['xsbh', '=', $id]])->get();
-        // dd($yjje);
         $yjje_sum = 0;
         foreach ($yjjes as $yjje) {
             $yjje_sum += $yjje->sfje;
         }
         $djje = $je - $yjje_sum;
         $jfjl = DB::table('table_sfjl')->where([['sfdh', '=', $dh], ['xsbh', '=', $id]])->get();
-        // dd($jfjl);
-        // var_dump($djje);
         return view('pages.custom', compact('id', 'dh', 'je', 'djje', 'yjje_sum', 'jfjl'));
     }
 
