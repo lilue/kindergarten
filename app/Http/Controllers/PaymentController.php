@@ -40,6 +40,9 @@ class PaymentController extends Controller
         // dd($unify);
         $config = $payments->jssdk->sdkConfig($unify['prepay_id']);
         // dd($config);
+        $app = EasyWeChat::officialAccount();
+        $baseJson = $app->jssdk->buildConfig(array('chooseWXPay'));
+        dd($baseJson);
         return view('payment.pay', compact('config'));
 
     }
