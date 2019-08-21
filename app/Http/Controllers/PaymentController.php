@@ -38,7 +38,7 @@ class PaymentController extends Controller
             'sub_openid' => $openid
         ]);
         // dd($unify);
-        $config = $payments->jssdk->sdkConfig($result['prepay_id']);
+        $config = $payments->jssdk->sdkConfig($unify['prepay_id']);
         dd($config);
 
         
