@@ -26,7 +26,8 @@ class AmountRequest extends FormRequest
         return [
             'id'        =>  'required|numeric|exists:table_sfdmx,xsbh',
             'dh'        =>  'required|exists:table_sfdmx,sfdh',
-            'amount'    =>  'required|numeric',
+            'djje'      =>  'required',
+            'amount'    =>  'required|integer|lte:djje',
         ];
     }
 }

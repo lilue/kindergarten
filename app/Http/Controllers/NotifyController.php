@@ -19,6 +19,8 @@ class NotifyController extends Controller
                 $result = $app->order->queryByOutTradeNumber($message['out_trade_no']);
                 if ($result['result_code'] == "SUCCESS" && $result['trade_state'] == "SUCCESS")
                 {
+                    Log::info('支付成功');
+                    Log::info($message);
                     //支付成功
                     // $pay_type = '微信支付';
                     // $carno = $message['attach'];

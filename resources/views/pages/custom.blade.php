@@ -10,6 +10,7 @@
         {{ csrf_field() }}
         <input type="hidden" name="id" value="{{ $id }}" />
         <input type="hidden" name="dh" value="{{ $dh }}" />
+        <input type="hidden" name="djje" value="{{ $djje }}" />
         @include('shared._error')
         <span class="input-group-text mb-1" id="basic-addon2">收费单总金额:￥{{ $je }}元</span>
 
