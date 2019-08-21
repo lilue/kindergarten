@@ -30,10 +30,10 @@ class PaymentController extends Controller
         $payments = EasyWeChat::payment();
         $trade_no = $request->dh . random_int(1000, 9999);
         $unify = $payments->order->unify([
-            'body' => '幼儿园自助缴费',
+            'body' => $id . '自助缴费',
             'out_trade_no' => $trade_no,
             'attach' => $request->id,
-            'total_fee' => $request->amount * 100,
+            'total_fee' => $request->amount/* * 100 */,
             'trade_type' => 'JSAPI',
             'sub_openid' => $openid
         ]);

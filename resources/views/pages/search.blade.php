@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', '首页')
+@section('title', '新增关联')
 @section('content')
 <div class="card bg-light mb-3">
     <div class="card-header">

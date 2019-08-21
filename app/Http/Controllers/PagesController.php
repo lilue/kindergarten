@@ -74,7 +74,7 @@ class PagesController extends Controller
         $jfjl = DB::table('table_sfjl')->where([['sfdh', '=', $dh], ['xsbh', '=', $id]])->get();
         // dd($jfjl);
         // var_dump($djje);
-        return view('pages.custom', compact('id', 'dh', 'je', 'djje', 'jfjl'));
+        return view('pages.custom', compact('id', 'dh', 'je', 'djje', 'yjje_sum', 'jfjl'));
     }
 
     public function cancel($id)
