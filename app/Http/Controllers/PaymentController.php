@@ -42,8 +42,8 @@ class PaymentController extends Controller
         // dd($config);
         $app = EasyWeChat::officialAccount();
         $baseJson = $app->jssdk->buildConfig(array('chooseWXPay'));
-        dd($baseJson);
-        return view('payment.pay', compact('config'));
+        // dd($baseJson);
+        return view('payment.pay', compact('config', 'baseJson'));
 
     }
 
