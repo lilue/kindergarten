@@ -37,22 +37,11 @@ class PaymentController extends Controller
             'trade_type' => 'JSAPI',
             'sub_openid' => $openid
         ]);
-        dd($unify);
-        if ($unify['return_code'] === 'SUCCESS') {
-            // 二次签名的参数必须与下面相同
-            $params = [
-                'appId'     => config('wechat.payment.default.sub_appid'),
-                'timeStamp' => time(),
-                'nonceStr'  => $unify['nonce_str'],
-                'package'   => 'prepay_id=' . $unify['prepay_id'],
-                'signType'  => 'MD5',
-            ];
-        $params['paySign'] = generate_sign($params, config('wechat.payment.default.key'));
-        return view('payment.amout', compact('params'));
-        //     return $this->response->array($params)->setStatusCode(201);
-        // } else {
-        //     return $this->response->array($unify)->setStatusCode(204);
-        }
+        // dd($unify);
+        $config = $payments->jssdk->sdkConfig($result['prepay_id']);
+        dd($config);
+
+        
     }
 
     /**
