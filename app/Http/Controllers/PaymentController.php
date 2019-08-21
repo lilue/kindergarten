@@ -39,9 +39,9 @@ class PaymentController extends Controller
         ]);
         // dd($unify);
         $config = $payments->jssdk->sdkConfig($unify['prepay_id']);
-        dd($config);
+        // dd($config);
+        return view('payment.pay', compact('config'));
 
-        
     }
 
     /**

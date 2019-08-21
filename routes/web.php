@@ -13,6 +13,9 @@
 
 Route::any('/wechat', 'WeChatController@serve')->name('wechat');
 
+// Route::get('/test', function() {
+//     return view('payment.pay');
+// });
 // Route::group(['middleware' => 'mock.user'], function() {
 //     // Route::get('/', function () {
 //     //     $user = session('wechat.oauth_user.default'); // 拿到授权用户资料

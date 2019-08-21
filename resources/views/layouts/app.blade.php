@@ -12,7 +12,9 @@
   <title>@yield('title', '湛江众拓信息科技有限公司') - {{ config('app.name') }}</title>
 
   <!-- Styles -->
+  @section('style')
   <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+  @show
 
 </head>
 
@@ -33,7 +35,9 @@
   </div>
 
   <!-- Scripts -->
+  @section('script')
   <script src="{{ mix('js/app.js') }}"></script>
+  @show
 </body>
 
 </html>
