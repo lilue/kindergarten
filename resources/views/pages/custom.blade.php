@@ -19,7 +19,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text">输入自定义金额：￥</span>
             </div>
-            <input type="text" name="amount" class="form-control" value="{{ old('amount') }}">
+            <input type="number" name="amount" class="form-control" value="{{ old('amount') }}">
             <div class="input-group-append">
                 <span class="input-group-text">.00</span>
             </div>
