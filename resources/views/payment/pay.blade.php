@@ -16,8 +16,7 @@
             success: function (res) {
                 // document.write(Object.entries(res));
                 if(res.errMsg == "chooseWXPay:ok" ) {
-                    window.location.href = "{{ route('notice', ['trade' => $trade_no]) }}"
-                    // alert('成功了');
+                    alert('成功了');
                 } else {
                     alert(res.errMsg);
                 }
