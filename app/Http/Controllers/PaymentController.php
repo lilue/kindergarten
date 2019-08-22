@@ -77,8 +77,8 @@ class PaymentController extends Controller
         $payments = EasyWeChat::payment();
         $result = $payments->order->queryByOutTradeNumber($trade);
         $data = DB::table('table_sfjl')->where('trade_no', $trade)->first();
-        dd($data);
+        // dd($data);
         // dd($result);
-        return view('payment.successful',compact('result'));
+        return view('payment.successful',compact('result', 'data'));
     }
 }
