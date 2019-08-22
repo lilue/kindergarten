@@ -72,7 +72,10 @@ class PaymentController extends Controller
      
     public function payments($trade)
     {
-        dump($trade);
+        // dump($trade);
+        $payments = EasyWeChat::payment();
+        $result = $payments->order->queryByOutTradeNumber($trade);
+        dd($result);
         return view('payment.successful');
     }
 }
