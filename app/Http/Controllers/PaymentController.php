@@ -28,7 +28,7 @@ class PaymentController extends Controller
         $openid = DB::table('table_xsxx')->where('xsbh', $request->id)->value('openid');
         // dump($openid);
         $payments = EasyWeChat::payment();
-        $trade_no = $request->dh . random_int(1000, 9999);
+        $trade_no = $request->dh . random_int(10000, 99999);
         $unify = $payments->order->unify([
             'body'          => $request->id . '自助缴费',
             'out_trade_no'  => $trade_no,
