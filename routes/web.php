@@ -48,7 +48,7 @@ Route::group(['middleware' => ['wechat.oauth:snsapi_userinfo']], function () {
     Route::get('/custom/{id}/{dh}/{je}', 'PagesController@customize')->name('pages.custom');
     Route::get('/cancel/{id}', 'PagesController@cancel')->name('pages.cancel');
     Route::post('/pay', 'PaymentController@pay')->name('pay');
-
+    Route::get('/notice/{trade}', 'PaymentController@payments')->name('notice');
 });
 
 
