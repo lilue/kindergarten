@@ -14,8 +14,8 @@ class CreateTableSfdmxTable extends Migration {
 	{
 		Schema::create('table_sfdmx', function(Blueprint $table)
 		{
-			$table->charset = 'utf8';
-            $table->collation = 'utf8_general_ci';
+			$table->charset = 'gb2312';
+            $table->collation = 'gb2312_chinese_ci';
 			$table->bigIncrements('id', true);
 			$table->string('sfdh', 20);
 			$table->string('xsbh', 50);

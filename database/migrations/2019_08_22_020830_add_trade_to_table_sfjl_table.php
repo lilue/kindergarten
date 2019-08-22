@@ -14,7 +14,7 @@ class AddTradeToTableSfjlTable extends Migration
     public function up()
     {
         Schema::table('table_sfjl', function (Blueprint $table) {
-            $table->string('trade_no')->nullable()->unique()->after('sfdh')->charset('utf8')->collation('utf8_general_ci');
+            $table->string('trade_no')->nullable()->unique()->after('sfdh')->charset('gb2312')->collation('gb2312_chinese_ci');
         });
     }
 

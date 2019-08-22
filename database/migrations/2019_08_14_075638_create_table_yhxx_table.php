@@ -14,8 +14,8 @@ class CreateTableYhxxTable extends Migration {
 	{
 		Schema::create('table_yhxx', function(Blueprint $table)
 		{
-			$table->charset = 'utf8';
-            $table->collation = 'utf8_general_ci';
+			$table->charset = 'gb2312';
+            $table->collation = 'gb2312_chinese_ci';
 			$table->bigIncrements('id', true);
 			$table->string('yhdm', 10);
 			$table->string('yhxm', 10);
