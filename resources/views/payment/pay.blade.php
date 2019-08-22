@@ -15,9 +15,10 @@
             signType: '<?= $config['signType'] ?>',
             paySign: '<?= $config['paySign'] ?>', // 支付签名
             success: function (res) {
-                document.write(Object.entries(res));
+                // document.write(Object.entries(res));
                 if(res.errMsg == "chooseWXPay:ok" ) {
-                    alert('成功了');
+                    // alert('成功了');
+                    window.location.href = "{{ route('notice') }}"
                 } else {
                     alert(res.errMsg);
                 }
@@ -32,6 +33,13 @@
 
 @section('content')
 
-<button type="button" onclick="callpay()" class="btn btn-success btn-lg btn-block">确认支付</button>
+<div class="card">
+  <h5 class="card-header">Featured</h4>
+  <div class="card-body">
+    <h4 class="card-title">Special title treatment</h4>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <button type="button" onclick="callpay()" class="btn btn-success btn-lg btn-block">确认支付</button>
+  </div>
+</div>
 
 @stop 

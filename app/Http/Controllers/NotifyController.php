@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use EasyWeChat;
 use DB;
+use Log;
 
 class NotifyController extends Controller
 {

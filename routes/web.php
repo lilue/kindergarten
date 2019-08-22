@@ -33,6 +33,8 @@ Route::any('/wechat', 'WeChatController@serve')->name('wechat');
 
 // });
 
+Route::post('/notify_url', 'NotifyController@notify')->name('notify_url');
+
 Route::group(['middleware' => ['wechat.oauth:snsapi_userinfo']], function () {
     Route::get('/user', function () {
         $user = session('wechat.oauth_user.default'); // 拿到授权用户资料
@@ -49,6 +51,5 @@ Route::group(['middleware' => ['wechat.oauth:snsapi_userinfo']], function () {
 
 });
 
-Route::any('/notify_url', 'NotifyController@notify')->name('notify');
 
 

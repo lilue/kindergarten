@@ -21,7 +21,7 @@ class CreateTableSfjlTable extends Migration {
 			$table->dateTime('sfsj');
 			$table->string('sfry', 20);
 			$table->string('sffs', 20);
-			$table->integer('ZT');
+			$table->integer('zt');
 		});
 	}
 

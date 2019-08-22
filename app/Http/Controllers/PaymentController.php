@@ -34,7 +34,7 @@ class PaymentController extends Controller
             'out_trade_no'  => $trade_no,
             'attach'        => $request->id,
             'total_fee'     => $request->amount/* * 100 */,
-            'notify_url'    => Route('notify'),
+            'notify_url'    => Route('notify_url'),
             'trade_type'    => 'JSAPI',
             'sub_openid'    => $openid
         ]);
@@ -69,27 +69,9 @@ class PaymentController extends Controller
         return json_encode($data);
     }
 
-    /**
-     * @支付类，下单
-     * @param {type} 
-     * @return: 
-     * @author: Lilue
-     */    
+     
     public function payments()
     {
-        $payments = EasyWeChat::payment();
-        // $result = $payments->order->unify([
-        //     'body' => $temp->in_car_plate . '停车费',
-        //     'out_trade_no' => $trade_no,
-        //     'attach'    => $temp->in_car_plate,
-        //     'total_fee' => $money * 100,//$money * 100,
-        //     'notify_url' => Route('notify_url'),
-        //     'trade_type' => 'JSAPI', // 请对应换成你的支付方式对应的值类型
-        //     'sub_openid' => $user->id,
-        // ]);
-        // $config = $payments->jssdk->sdkConfig($result['prepay_id']);
-        // $app = EasyWeChat::officialAccount();
-        // $baseJson = $app->jssdk->buildConfig(array('chooseWXPay'));
-        // return view('payment.payments', compact('temp', 'money', 'config', 'baseJson', 'trade_no', 'time'));
+        
     }
 }
