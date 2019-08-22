@@ -49,6 +49,6 @@ Route::group(['middleware' => ['wechat.oauth:snsapi_userinfo']], function () {
 
 });
 
-Route::post('/notify_url', 'NotifyController@notify')->name('notify');
+Route::any('/notify_url', 'NotifyController@notify')->name('notify');
 
 
