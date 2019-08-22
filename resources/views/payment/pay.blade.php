@@ -15,6 +15,7 @@
             signType: '<?= $config['signType'] ?>',
             paySign: '<?= $config['paySign'] ?>', // 支付签名
             success: function (res) {
+                document.write(Object.entries(res));
                 if(res.errMsg == "chooseWXPay:ok" ) {
                     alert('成功了');
                 } else {
