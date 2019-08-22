@@ -34,10 +34,10 @@
 @section('content')
 
 <div class="card">
-  <h5 class="card-header">Featured</h4>
+  <h5 class="card-header">支付订单创建成功</h4>
   <div class="card-body">
-    <h4 class="card-title">Special title treatment</h4>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <h4 class="card-title">支付金额：￥{{ $amount }} 元</h4>
+    <p class="card-text">请点击确认支付完成支付。</p>
     <button type="button" onclick="callpay()" class="btn btn-success btn-lg btn-block">确认支付</button>
   </div>
 </div>
