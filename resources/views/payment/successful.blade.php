@@ -9,7 +9,7 @@
   <hr class="my-4">
   <p>支付金额：￥1000 元。</p>
   <p class="lead">
-    <a class="btn btn-primary btn-lg" href="{{ route('/') }}" role="button">返回</a>
+    <a class="btn btn-primary btn-lg" href="{{ route('pages.root') }}" role="button">返回</a>
   </p>
 </div>
 
