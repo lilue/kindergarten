@@ -14,6 +14,8 @@ class CreateTableDzjlTable extends Migration
     public function up()
     {
         Schema::create('table_dzjl', function (Blueprint $table) {
+            $table->charset = 'utf8';
+            $table->collation = 'utf8_general_ci';
             $table->bigIncrements('id');
             $table->dateTime('对账日期')->nullable();
             $table->string('对账人');
