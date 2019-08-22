@@ -14,7 +14,7 @@ class CreateTableSfjlTable extends Migration {
 	{
 		Schema::create('table_sfjl', function(Blueprint $table)
 		{
-			$table->integer('id', true);
+			$table->bigIncrements('id', true);
 			$table->string('sfdh', 20);
 			$table->string('xsbh', 50);
 			$table->decimal('sfje', 10);

@@ -21,12 +21,7 @@ class PaymentController extends Controller
 
     public function pay(AmountRequest $request)
     {
-        // dump($request->id);
-        // dump($request->dh);
-        // dump($request->amount);
-        // dd($request);
         $openid = DB::table('table_xsxx')->where('xsbh', $request->id)->value('openid');
-        // dump($openid);
         $payments = EasyWeChat::payment();
         $amount = $request->amount;
         $trade_no = $request->dh . random_int(10000, 99999);
@@ -34,7 +29,7 @@ class PaymentController extends Controller
             'body'          => $request->id . '自助缴费',
             'out_trade_no'  => $trade_no,
             'attach'        => $request->id,
-            'total_fee'     => $amount/* * 100 */,
+            'total_fee'     => $amount * 100,
             'notify_url'    => Route('notify_url'),
             'trade_type'    => 'JSAPI',
             'sub_openid'    => $openid
@@ -61,10 +56,8 @@ class PaymentController extends Controller
         $result = $payments->order->queryByOutTradeNumber($request->trade_no);
         if ($result['result_code'] == "SUCCESS" && $result['trade_state'] == "SUCCESS")
         {
-            // dd('支付成功');
             $data = array('status' => 'SUCCESS');
         }else{
-            // dd('支付失败');
             $data = array('status' => "FAIL");
         }
         return json_encode($data);
@@ -77,8 +70,6 @@ class PaymentController extends Controller
         $payments = EasyWeChat::payment();
         $result = $payments->order->queryByOutTradeNumber($trade);
         $data = DB::table('table_sfjl')->where('trade_no', $trade)->first();
-        // dd($data);
-        // dd($result);
         return view('payment.successful',compact('result', 'data'));
     }
 }

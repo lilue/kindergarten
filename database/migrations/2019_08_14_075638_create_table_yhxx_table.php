@@ -14,7 +14,7 @@ class CreateTableYhxxTable extends Migration {
 	{
 		Schema::create('table_yhxx', function(Blueprint $table)
 		{
-			$table->integer('id', true);
+			$table->bigIncrements('id', true);
 			$table->string('yhdm', 10);
 			$table->string('yhxm', 10);
 			$table->string('yhmm', 30)->nullable()->default('');

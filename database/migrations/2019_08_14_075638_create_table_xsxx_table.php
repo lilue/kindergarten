@@ -14,9 +14,10 @@ class CreateTableXsxxTable extends Migration {
 	{
 		Schema::create('table_xsxx', function(Blueprint $table)
 		{
-			$table->integer('id', true);
+			$table->bigIncrements('id', true);
 			$table->string('xsbh', 50);
 			$table->string('xsxm', 50);
+			$table->string('bj', 50);
 			$table->string('sjhm', 11);
 			$table->string('openid', 100)->nullable();;
 			$table->integer('zt')->default(1)->comment('1正常，0删除');

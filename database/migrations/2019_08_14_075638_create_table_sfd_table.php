@@ -14,8 +14,9 @@ class CreateTableSfdTable extends Migration {
 	{
 		Schema::create('table_sfd', function(Blueprint $table)
 		{
-			$table->integer('id', true);
+			$table->bigIncrements('id', true);
 			$table->string('sfdh', 20);
+			$table->string('sfdmc', 50);
 			$table->dateTime('cjsj');
 			$table->string('cjr', 20);
 			$table->integer('zt')->default(1)->comment('-1删除,0禁用,1启用');
