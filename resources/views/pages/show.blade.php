@@ -14,11 +14,11 @@
       <td colspan="1" style="white-space:normal">{{ $date->xsxm }}</td>
     </tr>
     <tr>
+      <td colspan="1">关联手机</th>
+      <td colspan="1" style="white-space:normal">{{ $date->sjhm }}</td>
       @if(!empty($date->openid))
       <td colspan="2">已关联微信</td>
       @endif
-      <td colspan="1">关联手机</th>
-      <td colspan="1" style="white-space:normal">{{ $date->sjhm }}</td>
     </tr>
   </tbody>
 </table>
