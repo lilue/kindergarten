@@ -8,17 +8,17 @@
 <table class="table table-bordered">
   <tbody>
     <tr>
-      <td style="white-space:normal">学生编号</th>
+      <td style="">学生编号</th>
       <td style="white-space:normal">{{ $date->xsbh }}</td>
-      <td style="white-space:normal">学生姓名</td>
+      <td style="">学生姓名</td>
       <td style="white-space:normal">{{ $date->xsxm }}</td>
     </tr>
     <tr>
       @if(!empty($date->openid))
-      <td style="white-space:normal" colspan="2">已关联微信</td>
+      <td colspan="2">已关联微信</td>
       @endif
-      <td style="white-space:normal">关联手机</th>
-      <td>{{ $date->sjhm }}</td>
+      <td>关联手机</th>
+      <td style="white-space:normal">{{ $date->sjhm }}</td>
     </tr>
   </tbody>
 </table>
