@@ -25,5 +25,18 @@ class MenuController extends Controller
     public function create()
     {
         $app = EasyWeChat::officialAccount();
+        $buttons = [
+            [
+                "type"      =>  "view",
+                "name"      =>  "首页",
+                "url"       =>  "http://yey.kms0759.cn/"
+            ],
+            [
+                "type"      =>  "view",
+                "name"      =>  "新增关联",
+                "url"       =>  "http://yey.kms0759.cn/linked"
+            ],
+        ];
+        $app->menu->create($buttons);
     }
 }
