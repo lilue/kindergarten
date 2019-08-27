@@ -33,7 +33,7 @@ class MenuController extends Controller
             ],
             [
                 "type"      =>  "view",
-                "name"      =>  "新增关联",
+                "name"      =>  "报名缴费",
                 "url"       =>  "http://yey.kms0759.cn/linked"
             ],
         ];
