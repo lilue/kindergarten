@@ -53,7 +53,7 @@ class PagesController extends Controller
     public function show($id)
     {
         $date = DB::table('table_xsxx')->where('xsbh', $id)->first();
-        $orders = DB::select("select sfdh,sum(fyje) as je from table_sfdmx where xsbh=". $id ." group by sfdh");
+        $orders = DB::select("select table_sfdmx.sfdh,sum(table_sfdmx.fyje) as je,table_sfd.sfdmc from table_sfdmx LEFT JOIN table_sfd on table_sfd.sfdh=table_sfdmx.sfdh where table_sfdmx.xsbh=". $id ." GROUP BY table_sfdmx.sfdh,table_sfd.sfdmc");
         // dd($order);
         // dd($date);
         return view('pages.show', compact('date', 'orders'));

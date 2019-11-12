@@ -28,7 +28,7 @@
   <div class="col-sm-6 my-1">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">收费单号：{{ $order->sfdh }}</h5>
+        <h5 class="card-title">收费单名称：{{ $order->sfdmc }}</h5>
         <p class="card-text">收费单金额：{{ $order->je }}</p>
         <a href="{{ route('pages.custom', ['id' => $date->xsbh, 'dh' => $order->sfdh, 'je' => $order->je]) }}" class="btn btn-primary">前往缴费</a>
       </div>
