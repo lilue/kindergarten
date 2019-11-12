@@ -37,7 +37,7 @@ Route::post('/notify_url', 'NotifyController@notify')->name('notify_url');
 Route::get('/menu/list', 'MenuController@list')->name('menu.list');
 Route::get('/menu/current', 'MenuController@present')->name('menu.current');
 Route::get('/menu/create', 'MenuController@create')->name('menu.create');
-
+Route::get('/test/{id}/{dh}/{je}', 'PagesController@customize')->name('test');
 Route::group(['middleware' => ['wechat.oauth:snsapi_userinfo']], function () {
     Route::get('/user', function () {
         $user = session('wechat.oauth_user.default'); // 拿到授权用户资料

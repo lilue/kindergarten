@@ -14,7 +14,7 @@
         @include('shared._error')
         <span class="input-group-text mb-1" id="basic-addon2">收费单总金额:￥{{ $je }}元</span>
 
-        <span class="input-group-text mb-1" id="basic-addon2">待缴金额:￥{{ $djje }}元|已缴金额：￥{{ $yjje_sum }}元</span>
+        <span class="input-group-text mb-1" id="basic-addon2">待缴金额:￥{{ $djje }}.00元|已缴金额：￥{{ $yjje_sum }}.00元</span>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text">输入自定义金额：￥</span>
@@ -28,7 +28,15 @@
         </form>
     </div>
 </div>
-
+<ul class="list-unstyled">
+  <li>收费单明细
+    <ul>
+    @foreach($sfdmx as $mx)
+      <li>{{$mx->sfxm}}——￥{{mx->fyje}}元</li>
+    @endforeach
+    </ul>
+  </li>
+</ul>
 <table class="table">
   <thead>
     <tr>
