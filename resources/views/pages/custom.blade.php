@@ -32,7 +32,7 @@
   <li>收费单明细
     <ul>
     @foreach($sfdmx as $mx)
-      <li>{{$mx->sfxm}}——￥{{mx->fyje}}元</li>
+      <li>{{$mx->sfxm}}——￥{{$mx->fyje}}元</li>
     @endforeach
     </ul>
   </li>
