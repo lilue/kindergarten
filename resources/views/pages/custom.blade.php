@@ -28,15 +28,14 @@
         </form>
     </div>
 </div>
-<ul class="list-unstyled">
-  <li>收费单明细
-    <ul>
-    @foreach($sfdmx as $mx)
-      <li>{{$mx->sfxm}}——￥{{$mx->fyje}}元</li>
-    @endforeach
-    </ul>
-  </li>
-</ul>
+<table class="table table-bordered">
+@foreach($sfdmx as $mx)
+  <tr>
+    <td>{{$mx->sfxm}}</th>
+    <td>￥{{$mx->fyje}}元</td>
+  </tr>
+@endforeach
+</table>
 <table class="table">
   <thead>
     <tr>
