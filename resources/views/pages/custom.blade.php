@@ -29,6 +29,11 @@
     </div>
 </div>
 <table class="table table-bordered">
+<thead>
+  <tr>
+    <th scope="col">缴费明细</th>
+  </tr>
+</thead>
 @foreach($sfdmx as $mx)
   <tr>
     <td>{{$mx->sfxm}}</th>
