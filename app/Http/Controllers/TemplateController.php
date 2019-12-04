@@ -14,6 +14,7 @@ class TemplateController extends Controller
         $app = EasyWeChat::officialAccount();
         $res = DB::table('table_xsxx')->where('xsbh', '2019080001')->first();
         $first = "尊敬的" . $res->xsxm . "家长，您已成功缴费";
+        dump($res->openid);
         $app->template_message->send([
             'touser'        =>  $res->openid,
             'template_id'   =>  'gnqSCMYGufoQI6RdPBWWqIqYY',
