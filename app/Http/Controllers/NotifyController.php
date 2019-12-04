@@ -58,7 +58,10 @@ class NotifyController extends Controller
                     ]);
                     // Log::info('执行完存储过程');
                     // Log::info($total_fee);
-                    // return true;
+                    return true;
+                } else {
+                    Log::info('通信失败1');
+                    return $fail('通信失败，请稍后再通知我');
                 }
             } else {
                 Log::info('通信失败');
