@@ -14,7 +14,8 @@
         @include('shared._error')
         <span class="input-group-text mb-1" id="basic-addon2">收费单总金额:￥{{ $je }}元</span>
 
-        <span class="input-group-text mb-1" id="basic-addon2">待缴金额:￥{{ $djje }}.00元|已缴金额：￥{{ $yjje_sum }}.00元</span>
+        <span class="input-group-text mb-1" id="basic-addon2">待缴金额:￥{{ $djje }}.00元</span>
+        <span class="input-group-text mb-1" id="basic-addon2">已缴金额：￥{{ $yjje_sum }}.00元</span>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text">输入自定义金额：￥</span>
