@@ -6,13 +6,10 @@
         <h5>自助缴费</h5>
     </div>
     <div class="card-body">
-    <input type="hidden" name="id" value="{{ $id }}" />
-    <input type="hidden" name="dh" value="{{ $dh }}" />
-    <input type="hidden" name="djje" value="{{ $djje }}" />
     @include('shared._error')
-    <span class="input-group-text mb-1" id="basic-addon2">收费单总金额:￥元</span>
+    <span class="input-group-text mb-1" id="basic-addon2">收费单总金额:￥{{ $je }}元</span>
 
-    <span class="input-group-text mb-1" id="basic-addon2">待缴金额:￥.00元</span>
+    <span class="input-group-text mb-1" id="basic-addon2">待缴金额:￥{{ $djje }}.00元</span>
     <span class="input-group-text mb-1" id="basic-addon2">已缴金额：￥{{ $yjje_sum }}.00元</span>
     </div>
 </div>
