@@ -17,7 +17,7 @@ class NotifyController extends Controller
             if ($message['return_code'] === 'SUCCESS')
             {
                 $app = EasyWeChat::payment();
-                $App = EasyWeChat::officialAccount();
+                $appl = EasyWeChat::officialAccount();
                 $result = $app->order->queryByOutTradeNumber($message['out_trade_no']);
                 if ($result['result_code'] == "SUCCESS" && $result['trade_state'] == "SUCCESS")
                 {
@@ -38,10 +38,11 @@ class NotifyController extends Controller
                         Log::info("保存失败，请重新通知");
                         return $fail('保存失败，请重新通知');
                     }
+
                     $xsxx = DB::table('table_xsxx')->where('xsbh', $xsbh)->first();
                     $sfdmc = DB::table('table_sfd')->where('sfdh', $sfdh)->value('sfdmc');
                     $first = "尊敬的" . $xsxx->xsxm . "家长，您已成功缴费";
-                    $app->template_message->send([
+                    $appl->template_message->send([
                         'touser'        =>  $xsxx->openid,
                         'template_id'   =>  'gnqSCMYGufoQI6RdPBWWqIqYY-T_ebQS-ohfft8jUmE',
                         'url'           =>  route('details', ['id' => $xsbh, 'dh' => $sfdh]),
