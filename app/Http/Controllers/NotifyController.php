@@ -52,7 +52,7 @@ class NotifyController extends Controller
                             'keyword2'      =>  $xsxx->bj,                  // 班级
                             'keyword3'      =>  $sfdmc,                     // 账单名称
                             'keyword4'      =>  $total_fee,                 // 缴费金额
-                            'keyword5'      =>  $time,                      // 缴费时间
+                            'keyword5'      =>  substr($time,0,4). "年" .substr($time,4,2) . "月" . substr($time,6,2) . '日  ' . substr($time,8,2) . ':' . substr($time,10,2) . ':' . substr($time,12,2),                      // 缴费时间
                             'remark'      =>  '感谢您的支持！点击查看缴费单。',
                         ],
                     ]);

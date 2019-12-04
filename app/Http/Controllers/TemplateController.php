@@ -21,4 +21,10 @@ class TemplateController extends Controller
         $sfdmx = DB::table('table_sfdmx')->where([['sfdh', '=', $dh], ['xsbh', '=', $id]])->get();
         return view('template.details', compact('id', 'dh', 'yjje_sum', 'jfjl', 'sfdmx', 'je', 'djje'));
     }
+
+    public function test()
+    {
+        $time = '20191204172616';
+        dump(substr($time,0,4). "年" .substr($time,4,2) . "月" . substr($time,6,2) . '日  ' . substr($time,8,2) . ':' . substr($time,10,2) . ':' . substr($time,12,2));
+    }
 }
