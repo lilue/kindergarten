@@ -45,9 +45,8 @@ class NotifyController extends Controller
                 Log::info('通信失败');
                 return $fail('通信失败，请稍后再通知我');
             }
-
         });
         Log::info("response->send()");
-        $response->send();
+        return $response;
     }
 }
