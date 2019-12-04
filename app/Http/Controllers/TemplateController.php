@@ -17,7 +17,7 @@ class TemplateController extends Controller
         dump($res->openid);
         $app->template_message->send([
             'touser'        =>  $res->openid,
-            'template_id'   =>  'gnqSCMYGufoQI6RdPBWWqIqYY',
+            'template_id'   =>  'gnqSCMYGufoQI6RdPBWWqIqYY-T_ebQS-ohfft8jUmE',
             'url'           =>  'http://www.baidu.com',
             'data'          =>  [
                 'first'         =>  $first,
