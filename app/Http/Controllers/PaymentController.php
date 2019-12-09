@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use EasyWeChat;
 use App\Http\Requests\AmountRequest;
 use DB;
+use Log;
 
 class PaymentController extends Controller
 {
