@@ -28,14 +28,15 @@ class MenuController extends Controller
         $buttons = [
             [
                 "type"      =>  "view",
-                "name"      =>  "首页",
-                "url"       =>  "http://xx.kms0759.cn/"
-            ],
-            [
-                "type"      =>  "view",
                 "name"      =>  "报名缴费",
                 "url"       =>  "http://xx.kms0759.cn/linked"
             ],
+            [
+                "type"      =>  "view",
+                "name"      =>  "个人中心",
+                "url"       =>  "http://xx.kms0759.cn/"
+            ],
+            
         ];
         $app->menu->create($buttons);
     }
