@@ -35,8 +35,8 @@ class PaymentController extends Controller
             'trade_type'    => 'JSAPI',
             'sub_openid'    => $openid
         ]);
-        // dd($unify);
-        Log::info("去支付" . $unify);
+        dd($unify);
+        // Log::info("去支付" . $unify);
         $config = $payments->jssdk->sdkConfig($unify['prepay_id']);
         // dd($config);
         $app = EasyWeChat::officialAccount();
