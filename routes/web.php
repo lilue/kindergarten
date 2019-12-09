@@ -40,7 +40,7 @@ Route::get('/menu/create', 'MenuController@create')->name('menu.create');
 Route::get('/test', 'TemplateController@test')->name('test');
 // Route::get('/temp', 'TemplateController@template')->name('temp');
 Route::get('/detail/{id}/{dh}', 'TemplateController@details')->name('details');
-Route::group(['middleware' => ['wechat.oauth:snsapi_userinfo']], function () {
+Route::group(['middleware' => ['wechat.oauth:default,snsapi_userinfo']], function () {
     Route::get('/user', function () {
         $user = session('wechat.oauth_user.default'); // 拿到授权用户资料
         dd($user);
