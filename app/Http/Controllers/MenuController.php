@@ -29,12 +29,12 @@ class MenuController extends Controller
             [
                 "type"      =>  "view",
                 "name"      =>  "首页",
-                "url"       =>  "http://yey.kms0759.cn/"
+                "url"       =>  "http://xx.kms0759.cn/"
             ],
             [
                 "type"      =>  "view",
                 "name"      =>  "报名缴费",
-                "url"       =>  "http://yey.kms0759.cn/linked"
+                "url"       =>  "http://xx.kms0759.cn/linked"
             ],
         ];
         $app->menu->create($buttons);
