@@ -44,7 +44,7 @@ class NotifyController extends Controller
                     $first = "尊敬的" . $xsxx->xsxm . "家长，您已成功缴费";
                     $appl->template_message->send([
                         'touser'        =>  $xsxx->openid,
-                        'template_id'   =>  'gnqSCMYGufoQI6RdPBWWqIqYY-T_ebQS-ohfft8jUmE',
+                        'template_id'   =>  '0UY3WJ6ooLm2h6FoUwEAII1jsDmg80C7sKA_GG5S-jM',
                         'url'           =>  route('details', ['id' => $xsbh, 'dh' => $sfdh]),
                         'data'          =>  [
                             'first'         =>  $first,                     // 抬头
