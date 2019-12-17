@@ -31,7 +31,11 @@ class NotifyController extends Controller
                     $sfdh = substr($trade_no, 0, -5);
                     $total_fee = $message['total_fee'] / 100 ;
                     $fs = "微信";
-                    $id = DB::table('table_sfjl')->insertGetId(['sfdh' => $sfdh, 'trade_no' => $trade_no, 'xsbh' => $xsbh, 'sfje' => $total_fee, 'sfsj' => $time, 'sfry'=> $fs, 'sffs' => $fs, 'zt' => 1]);
+                    $no = DB::table('table_config')->where('id', '1')->value('no');
+                    $djh = 'WX' . $no;
+                    $no += 1;
+                    $id = DB::table('table_sfjl')->insertGetId(['sfdh' => $sfdh, 'trade_no' => $trade_no, 'xsbh' => $xsbh, 'sfje' => $total_fee, 'sfsj' => $time, 'sfry'=> $fs, 'sffs' => $fs, 'zt' => 1, 'djh' => $djh]);
+                    DB::table('table_config')->where('id', '1')->update(['no' => $no]);
                     Log::info("插入数据id：" . $id);
                     if(empty($id))
                     {
