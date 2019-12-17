@@ -29,7 +29,7 @@ class PaymentController extends Controller
             'body'          => $request->id . '自助缴费',
             'out_trade_no'  => $trade_no,
             'attach'        => $request->id,
-            'total_fee'     => $amount * 100,
+            'total_fee'     => $amount,
             'notify_url'    => Route('notify_url'),
             'trade_type'    => 'JSAPI',
             'sub_openid'    => $openid
