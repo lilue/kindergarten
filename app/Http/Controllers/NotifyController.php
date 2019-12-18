@@ -40,7 +40,6 @@ class NotifyController extends Controller
                         $yjje_sum += $yjje->sfje;
                         Log::info("金额" + $yjje_sum);
                     }
-                    $yjje_sum = $yjje_sum + $total_fee;
                     Log::info("金额" + $yjje_sum);
                     $id = DB::table('table_sfjl')->insertGetId(['sfdh' => $sfdh, 'trade_no' => $trade_no, 'xsbh' => $xsbh, 'sfje' => $total_fee, 'sfsj' => $time, 'sfry'=> $fs, 'sffs' => $fs, 'zt' => 1, 'djh' => $djh, 'bz' => $yjje_sum]);
                     DB::table('table_config')->where('id', '1')->update(['no' => $no]);
