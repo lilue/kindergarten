@@ -38,9 +38,8 @@ class NotifyController extends Controller
                     $yjje_sum = 0;
                     foreach ($jfjl as $yjje) {
                         $yjje_sum += $yjje->sfje;
-                        Log::info("金额" + $yjje_sum);
+                        Log::info($yjje_sum);
                     }
-                    Log::info("金额" + $yjje_sum);
                     $id = DB::table('table_sfjl')->insertGetId(['sfdh' => $sfdh, 'trade_no' => $trade_no, 'xsbh' => $xsbh, 'sfje' => $total_fee, 'sfsj' => $time, 'sfry'=> $fs, 'sffs' => $fs, 'zt' => 1, 'djh' => $djh, 'bz' => $yjje_sum]);
                     DB::table('table_config')->where('id', '1')->update(['no' => $no]);
                     Log::info("插入数据id：" . $id);
