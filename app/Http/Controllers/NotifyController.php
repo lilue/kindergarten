@@ -34,7 +34,7 @@ class NotifyController extends Controller
                     $no = DB::table('table_config')->where('id', '1')->value('no');
                     $djh = 'WX' . $no;
                     $no += 1;
-                    $jfjl = DB::table('table_sfjl')->where([['sfdh', '=', $dh], ['xsbh', '=', $xsbh]])->get();
+                    $jfjl = DB::table('table_sfjl')->where([['sfdh', '=', $sfdh], ['xsbh', '=', $xsbh]])->get();
                     $yjje_sum = $total_fee;
                     foreach ($jfjl as $yjje) {
                         $yjje_sum += $yjje->sfje;
