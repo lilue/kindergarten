@@ -24,7 +24,13 @@ class TemplateController extends Controller
 
     public function test()
     {
-        
-        return '你好啊';
+        $dh = 20191111121650001;
+        $id = 2019080001;
+        $jfjl = DB::table('table_sfjl')->where([['sfdh', '=', $dh], ['xsbh', '=', $id]])->get();
+        $yjje_sum = 0;
+        foreach ($jfjl as $yjje) {
+            $yjje_sum += $yjje->sfje;
+        }
+        dd($yjje_sum);
     }
 }

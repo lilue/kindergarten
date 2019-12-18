@@ -34,7 +34,12 @@ class NotifyController extends Controller
                     $no = DB::table('table_config')->where('id', '1')->value('no');
                     $djh = 'WX' . $no;
                     $no += 1;
-                    $id = DB::table('table_sfjl')->insertGetId(['sfdh' => $sfdh, 'trade_no' => $trade_no, 'xsbh' => $xsbh, 'sfje' => $total_fee, 'sfsj' => $time, 'sfry'=> $fs, 'sffs' => $fs, 'zt' => 1, 'djh' => $djh]);
+                    $jfjl = DB::table('table_sfjl')->where([['sfdh', '=', $dh], ['xsbh', '=', $xsbh]])->get();
+                    $yjje_sum = $total_fee;
+                    foreach ($jfjl as $yjje) {
+                        $yjje_sum += $yjje->sfje;
+                    }
+                    $id = DB::table('table_sfjl')->insertGetId(['sfdh' => $sfdh, 'trade_no' => $trade_no, 'xsbh' => $xsbh, 'sfje' => $total_fee, 'sfsj' => $time, 'sfry'=> $fs, 'sffs' => $fs, 'zt' => 1, 'djh' => $djh, 'bz' => $yjje_sum]);
                     DB::table('table_config')->where('id', '1')->update(['no' => $no]);
                     Log::info("插入数据id：" . $id);
                     if(empty($id))
