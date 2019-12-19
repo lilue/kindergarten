@@ -1,4 +1,12 @@
 <?php
+/*
+ * @Description: 
+ * @Version: 1.0
+ * @Autor: Lilue
+ * @Date: 2019-08-12 14:42:45
+ * @LastEditors  : Lilue
+ * @LastEditTime : 2019-12-19 16:56:05
+ */
 
 namespace App\Http\Controllers;
 
@@ -35,12 +43,14 @@ class NotifyController extends Controller
                     $djh = 'WX' . $no;
                     $no += 1;
                     $jfjl = DB::table('table_sfjl')->where([['sfdh', '=', $sfdh], ['xsbh', '=', $xsbh]])->get();
+                    $je = DB::table('table_sfdmx')->where([['sfdh', '=', $dh], ['xsbh', '=', $id]])->sum('fyje');
                     $yjje_sum = 0;
                     foreach ($jfjl as $yjje) {
                         $yjje_sum += $yjje->sfje;
                     }
-                    Log::info($yjje_sum);
-                    $id = DB::table('table_sfjl')->insertGetId(['sfdh' => $sfdh, 'trade_no' => $trade_no, 'xsbh' => $xsbh, 'sfje' => $total_fee, 'sfsj' => $time, 'sfry'=> $fs, 'sffs' => $fs, 'zt' => 1, 'djh' => $djh, 'bz' => $yjje_sum]);
+                    $djje = $je - $yjje_sum - $total_fee;
+                    $bz = "已收：" . $yjje_sum . "，本次收费：" . $total_fee . "，欠费：" . $djje;
+                    $id = DB::table('table_sfjl')->insertGetId(['sfdh' => $sfdh, 'trade_no' => $trade_no, 'xsbh' => $xsbh, 'sfje' => $total_fee, 'sfsj' => $time, 'sfry'=> $fs, 'sffs' => $fs, 'zt' => 1, 'djh' => $djh, 'bz' => $bz]);
                     DB::table('table_config')->where('id', '1')->update(['no' => $no]);
                     Log::info("插入数据id：" . $id);
                     if(empty($id))
